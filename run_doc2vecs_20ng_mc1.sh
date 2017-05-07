@@ -13,10 +13,10 @@ negatives=('-negative 12' '-negative 50')
 models=('-cbow 1 -sample 1e-5' '-cbow 1 -sample 1e-4' '-cbow 1 -sample 1e-3' '-cbow 0 -sample 1e-3' '-cbow 0 -sample 1e-2' '-cbow 0 -sample 1e-1')
 default_parameters=('-size 150 -alpha 0.05 -window 10 -negative 25 -iter 25 -threads 1 -min_count 1')
 default_models=('-cbow 0 -sample 1e-2' '-cbow 1 -sample 1e-4')
-mkdir time_p2v_20ng
-time_fold="time_p2v_20ng/"
-mkdir space_p2v_20ng
-space_fold="space_p2v_20ng/"
+mkdir time_p2v_20ng_mc1
+time_fold="time_p2v_20ng_mc1/"
+mkdir space_p2v_20ng_mc1
+space_fold="space_p2v_20ng_mc1/"
 for model in "${default_models[@]}"; do
 	for size in "${sizes[@]}"; do
 	    delete=("-size 150")
