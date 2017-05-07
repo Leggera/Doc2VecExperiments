@@ -33,10 +33,10 @@ awk 'BEGIN{a=0;}{print "_*" a " " $0; a++;}' < alldata.txt > alldata-id.txt
 alphas=('-alpha 0.01' '-alpha 0.015' '-alpha 0.020')
 default_parameters=('-size 150 -alpha 0.05 -window 10 -negative 25 -iter 25 -threads 1 -min_count 5 -train alldata-id.txt')
 default_models=('-cbow 0 -sample 1e-2' '-cbow 1 -sample 1e-4')
-mkdir time_p2v
-time_fold="time_p2v/"
-mkdir space_p2v
-space_fold="space_p2v/"
+mkdir time_p2v_mc5
+time_fold="time_p2v_mc5/"
+mkdir space_p2v_mc5
+space_fold="space_p2v_mc5/"
 for model in "${default_models[@]}"; do
 	for alpha in "${alphas[@]}"; do
 	    delete=("-alpha 0.05")
