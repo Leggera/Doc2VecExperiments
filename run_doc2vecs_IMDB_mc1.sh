@@ -60,6 +60,7 @@ for model in "${default_models[@]}"; do
 	    d2v_t="$time_fold""time_""$d2v_out"
 	    (time (python3 run_doc2vec_proper.py  -output "$space_fold""$d2v_out" $alpha $model $d_p >> "$d2v_t")) &>> "$d2v_t" &
 	done
+	wait
 	for window in "${windows[@]}"; do
 	    delete=("-window 10")
 	    d_p=${default_parameters[@]/$delete}
